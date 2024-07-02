@@ -4,6 +4,8 @@ public class Person {
     private String lastName;
     private String password;
 
+    private float balance = 0;
+
     Person() {
     }
 
@@ -19,6 +21,10 @@ public class Person {
         return password;
     }
 
+    public float getBalance() {
+        return balance;
+    }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -29,6 +35,10 @@ public class Person {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public void setBalance(float balance) {
+        this.balance = balance;
     }
 
     @Override
