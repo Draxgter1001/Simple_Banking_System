@@ -1,4 +1,4 @@
-import java.util.Map;
+
 import java.util.Random;
 import java.util.Scanner;
 import java.util.HashMap;
@@ -7,6 +7,7 @@ public class Main {
 
     static Scanner input = new Scanner(System.in);
     static HashMap<Integer, Person> people = new HashMap<>();
+    static int id;
 
     public static void main(String[] args) {
         app();
@@ -21,12 +22,14 @@ public class Main {
             int option = input.nextInt();
 
             switch(option){
-                case 1: register();
-                    for(Map.Entry<Integer, Person> entry : people.entrySet()){
-                        System.out.println(entry.getKey() + " " + entry.getValue());
-                    }
+                case 1:
+                    register();
+//                    for(Map.Entry<Integer, Person> entry : people.entrySet()){
+//                        System.out.println(entry.getKey() + " " + entry.getValue());
+//                    }
                     break;
-                case 2: login();
+                case 2:
+                    login();
                     break;
             }
         }
@@ -46,11 +49,11 @@ public class Main {
         person.setLastName(lastName);
         person.setPassword(password);
 
-        int id;
         Random random = new Random();
         id = random.nextInt(2000);
 
         people.put(id, person);
+        System.out.println("This is your account number: " + id);
 
     }
 
