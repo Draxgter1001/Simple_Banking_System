@@ -5,7 +5,7 @@ public class Account {
     private String firstName;
     private String lastName;
     private String password;
-    private final ArrayList<Transfer> transfers = new ArrayList<>();
+    private final ArrayList<Transaction> transactions = new ArrayList<>();
 
     private float balance = 0;
 
@@ -49,13 +49,13 @@ public class Account {
         return firstName + " " + lastName;
     }
 
-    public void addTransfer(Transfer transfer) {
-        transfers.add(transfer);
+    public void addTransfer(Transaction transaction) {
+        transactions.add(transaction);
     }
 
     public void printTransfers() {
-        for (Transfer transfer : transfers) {
-            System.out.println(transfer.toString());
+        for (Transaction transaction : transactions) {
+            System.out.println(transaction.toString());
         }
     }
 }
