@@ -1,12 +1,15 @@
-public class Person {
+import java.util.ArrayList;
+
+public class Account {
 
     private String firstName;
     private String lastName;
     private String password;
+    private final ArrayList<Transfer> transfers = new ArrayList<>();
 
     private float balance = 0;
 
-    Person() {
+    Account() {
     }
 
     public String getFirstName() {
@@ -44,5 +47,15 @@ public class Person {
     @Override
     public String toString() {
         return firstName + " " + lastName;
+    }
+
+    public void addTransfer(Transfer transfer) {
+        transfers.add(transfer);
+    }
+
+    public void printTransfers() {
+        for (Transfer transfer : transfers) {
+            System.out.println(transfer.toString());
+        }
     }
 }
