@@ -9,9 +9,6 @@ public class App {
     private static final HashMap<Integer, Account> accounts = new HashMap<>();
     private static int accountNumber;
 
-    App(){
-    }
-
     public static void app(){
 
         System.out.println("Tafshi's Banking System");
