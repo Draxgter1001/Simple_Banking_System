@@ -1,5 +1,3 @@
-import Custom_Exceptions.InvalidValue;
-
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Random;
@@ -8,7 +6,7 @@ import java.util.Scanner;
 public class App {
 
     private static final Scanner input = new Scanner(System.in);
-    private static HashMap<Integer, Account> accounts = new HashMap<>();
+    private static final HashMap<Integer, Account> accounts = new HashMap<>();
     private static int accountNumber;
 
     App(){
@@ -17,10 +15,11 @@ public class App {
     public static void app(){
 
         System.out.println("Tafshi's Banking System");
+        boolean exit = true;
 
-        while(true) {
+        while(exit) {
             try {
-                System.out.print("Please enter your choice (1 to Register/ 2 to Login): ");
+                System.out.print("Please enter your choice (1 to Register/ 2 to Login/ 3 to Exit): ");
                 int option = input.nextInt();
 
                 switch (option) {
@@ -30,6 +29,8 @@ public class App {
                     case 2:
                         login();
                         break;
+                    case 3:
+                        exit = false;
                     default:
                         System.out.println("Please enter 1 or 2.");
                 }
@@ -86,7 +87,7 @@ public class App {
         boolean exit = false;
 
         do {
-            System.out.println("\nTafshi's Bank");
+            System.out.println("\nTafshi's Banking System");
 
             System.out.println("Account number: " + accountNumber);
             System.out.println("Account name: " + accounts.get(accountNumber).getFirstName() + " " + accounts.get(accountNumber).getLastName());
