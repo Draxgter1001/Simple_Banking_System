@@ -64,29 +64,43 @@ public class App {
     }
 
     private static void bank(){
-        System.out.println("\nTafshi's Bank");
 
-        System.out.println("Account number: " + accountNumber);
-        System.out.println("Account name: " + accounts.get(accountNumber).getFirstName() + " " + accounts.get(accountNumber).getLastName());
-        System.out.println("Account balance: " + accounts.get(accountNumber).getBalance());
+        boolean exit = false;
 
-        System.out.println("\nEnter 1 for Deposit\nEnter 2 for Withdrawal\nEnter 3 to transfer money\nEnter 4 to check transaction history");
-        System.out.print("Enter your option: ");
-        int option = input.nextInt();
-        switch(option){
-            case 1:
-                deposit();
-                break;
-            case 2:
-                withdraw();
-                break;
-            case 3:
-                transfer();
-                break;
-            case 4:
-                transactions();
-                break;
-        }
+        do {
+            System.out.println("\nTafshi's Bank");
+
+            System.out.println("Account number: " + accountNumber);
+            System.out.println("Account name: " + accounts.get(accountNumber).getFirstName() + " " + accounts.get(accountNumber).getLastName());
+            System.out.println("Account balance: " + accounts.get(accountNumber).getBalance());
+
+            System.out.println("""
+
+                    Enter 1 for Deposit
+                    Enter 2 for Withdrawal
+                    Enter 3 to transfer money
+                    Enter 4 to check transaction history
+                    Enter any number to exit\s""");
+            System.out.print("Enter your option: ");
+            int option = input.nextInt();
+            switch(option){
+                case 1:
+                    deposit();
+                    break;
+                case 2:
+                    withdraw();
+                    break;
+                case 3:
+                    transfer();
+                    break;
+                case 4:
+                    transactions();
+                    break;
+                default:
+                    exit = true;
+            }
+        }while(!exit);
+
     }
 
     private static Boolean loginCheck(HashMap<Integer, Account> map, int accountNum, String password){
