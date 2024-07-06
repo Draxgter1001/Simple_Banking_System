@@ -1,3 +1,5 @@
+package Main_App;
+
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Random;
@@ -86,9 +88,9 @@ public class App {
         do {
             System.out.println("\nTafshi's Banking System");
 
-            System.out.println("Account number: " + accountNumber);
-            System.out.println("Account name: " + accounts.get(accountNumber).getFirstName() + " " + accounts.get(accountNumber).getLastName());
-            System.out.println("Account balance: " + accounts.get(accountNumber).getBalance());
+            System.out.println("Main_App.Account number: " + accountNumber);
+            System.out.println("Main_App.Account name: " + accounts.get(accountNumber).getFirstName() + " " + accounts.get(accountNumber).getLastName());
+            System.out.println("Main_App.Account balance: " + accounts.get(accountNumber).getBalance());
 
             try{
                 System.out.println("""

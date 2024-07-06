@@ -1,3 +1,5 @@
+package Main_App;
+
 public class Transaction {
 
     private final int accountNumber;
