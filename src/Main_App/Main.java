@@ -1,13 +1,11 @@
 package Main_App;
 
-import Java_Swing.GUI;
+import Java_Swing.BaseFrame;
 
 public class Main {
 
 
     public static void main(String[] args){
-        GUI gui = new GUI();
-
         App.app();
     }
 }
