@@ -51,11 +51,11 @@ public class Account {
         return firstName + " " + lastName;
     }
 
-    public void addTransfer(Transaction transaction) {
+    public void addTransaction(Transaction transaction) {
         transactions.add(transaction);
     }
 
-    public void printTransfers() {
+    public void printTransactions() {
         for (Transaction transaction : transactions) {
             System.out.println(transaction.toString());
         }
