@@ -1,5 +1,8 @@
 package Main_App;
 
+import Java_Swing.LoginGUI;
+
+import javax.swing.*;
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Random;
@@ -12,6 +15,13 @@ public class App {
     private static int accountNumber;
 
     public static void app(){
+
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new LoginGUI().setVisible(true);
+            }
+        });
 
         System.out.println("Tafshi's Banking System");
         boolean exit = true;
