@@ -1,17 +1,23 @@
 package Main_App;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Account {
+public class Account implements Serializable {
+
+    @Serial
+    private static final long serialVersionUID = 1L;
 
     private String firstName;
     private String lastName;
     private String password;
+    private int accountNumber;
     private final ArrayList<Transaction> transactions = new ArrayList<>();
 
     private float balance = 0;
 
-    Account() {
+    public Account() {
     }
 
     public String getFirstName() {
@@ -30,6 +36,8 @@ public class Account {
         return balance;
     }
 
+    public int getAccountNumber() { return accountNumber; }
+
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -46,6 +54,8 @@ public class Account {
         this.balance = balance;
     }
 
+    public void setAccountNumber(int accountNumber) { this.accountNumber = accountNumber; }
+
     @Override
     public String toString() {
         return firstName + " " + lastName;
@@ -55,9 +65,15 @@ public class Account {
         transactions.add(transaction);
     }
 
-    public void printTransactions() {
+    public String printTransactions() {
+
+        StringBuilder sb = new StringBuilder();
+
         for (Transaction transaction : transactions) {
             System.out.println(transaction.toString());
+            sb.append(transactions).append("\n");
         }
+
+        return sb.toString();
     }
 }
