@@ -1,5 +1,7 @@
-Simple Banking System app where the user can create an account and login.
+Simple Banking System app allows users to create an account and log in.
 
-After they logged in they can either deposit or withdraw money, pay another account and view their payment history.
+After they log in, they can deposit or withdraw money, pay another account and view their payment history.
 
-The software has a GUI that was fully developed using the Java Swing library.
+The software has a fully developed GUI using the Java Swing library.
+
+Download the project, open it in a Java development IDE, and run the Main class to run the program.
