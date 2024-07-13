@@ -1,10 +1,18 @@
 package Java_Swing;
 
+import Main_App.Account;
+
 import javax.swing.*;
 
 public abstract class BaseFrame extends JFrame {
 
+    protected Account account;
+
     public BaseFrame(String title) {
+        initialize(title);
+    }
+    public BaseFrame(String title, Account account) {
+        this.account = account;
         initialize(title);
     }
 
