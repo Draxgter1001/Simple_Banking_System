@@ -6,7 +6,7 @@ public class Transaction {
     private final String name;
     private final double amount;
 
-    Transaction(int accountNumber, String name, double amount) {
+    public Transaction(int accountNumber, String name, double amount) {
         this.accountNumber = accountNumber;
         this.name = name;
         this.amount = amount;
